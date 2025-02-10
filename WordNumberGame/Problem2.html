@@ -1,0 +1,64 @@
+<!-- "I pledge my honor that I have abided by the Stevens Honor System"
+
+Submitted on 12/3/2023
+
+Websites drawn inspiration from: 
+geeksforgeeks.org
+datascienceparichay.com
+w3schools.com
+@author: James Grant -->
+
+<html>
+<body>
+
+<form>
+    <label for="amt">Amount:</label><br>
+    <input type="text" id="amt" name="amt"><br>
+    <label for="curr">Type of Currency: USD, EUR, or GBP</label><br>
+    <input type="text" id="curr" name="curr"><br> 
+</form>
+
+<button onclick="convertCurrency()">Convert</button>
+
+<p id="demo"></p>
+
+<script>
+
+function convertCurrency(){
+let a = document.getElementById("amt").value
+let n = document.getElementById("curr").value
+
+a = parseFloat(a)
+
+if(n == "USD"){
+    e = "Amount in EUR: " + 0.92 * a + ","
+    g = " Amount in GBP: " + 0.79 * a + ","
+    y = " Amount in JPY: " + 146.83 * a
+    
+    document.getElementById("demo").innerHTML =
+    e + g + y
+}else if(n == "EUR"){
+    u = "Amount in USD: " + 1.09 * a + ","
+    g = " Amount in GBP: " + 0.86 * a + ","
+    y = " Amount in JPY: " + 159.92 * a
+
+    document.getElementById("demo").innerHTML =
+    u + g + y
+}else if(n == "GBP"){
+    u = "Amount in USD: " + 1.27 * a + ","
+    e = " Amount in EUR: " + 1.17 * a + ","
+    y = " Amount in JPY: " + 186.45 * a
+    
+    document.getElementById("demo").innerHTML =
+    u + e + y
+}else{
+    document.getElementById("demo").innerHTML =
+    "Please input a valid currency"
+}
+
+}
+
+</script>
+
+</body>
+</html>
