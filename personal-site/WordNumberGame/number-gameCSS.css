@@ -1,0 +1,56 @@
+body {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
+   background-color: powderblue;
+   font-family: "poppins", sans-serif;
+}
+
+hr {
+    width: 500px;
+}
+
+.container{
+    max-width: 850px;
+    width: 100%;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    color: 000;
+    border-radius: 5px;
+    background-color: rgb(216, 213, 209);
+    transition: all 0.6 ease-in;
+}
+
+.container button{
+    border: none;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    outline: none;
+    font-size: 0.9rem;
+    background-color: deepskyblue;
+    border-radius: 4px;
+    color: white;
+    font-family: "poppoins", sans-serif;
+    margin-top: 1rem;
+}
+
+.container input{
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    margin-top: 0.5rem;
+    
+}
+
+.container select{
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+}
