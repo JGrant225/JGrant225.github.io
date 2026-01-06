@@ -27,6 +27,20 @@
           <p>My name is James Grant,  I'm a Software Engineering student at Stevens Institute of Technology with a strong foundation in Python, Java, and C++. I am adept at implementing complex systems and collaborating with peers to develop innovative solutions. I am committed to excellence in academics and extracurriculars, and hold a track record of achievements including Dean's List recognition.</p>
           <p>To learn more about my work history, check out my <a href="resume.html"> resume</a>. Thanks for stopping by!</p>
 
+          <div class="slideshow-container">
+            <div class="mySlides fade">
+              <img src="images/2025_Pinnacle_Conference.jpg" style="width:100%" alt="A photo of me presenting at Stevens Institute of Technology's Pinnacle Conference 2025">
+            </div>
+
+            <div class="mySlides fade">
+              <img src="images/2024_Pinnacle_Conference.jpg" style="width:100%" alt="A photo of me presenting at Stevens Institute of Technology's Pinnacle Conference 2024">
+            </div>
+
+            <div class="mySlides fade">
+              <img src="images/Chi_Phi_Christmas.PNG" style="width:100%; -webkit-clip-path: inset(0 0 50px 0); clip-path: inset(0 0 50px 0);" alt="A photo of me with my fraternity brothers at our annual Chi Phi Christmas event">
+            </div>
+          </div>
+
           <!-- End content edits here. -->
         </main>
       </div>
@@ -51,5 +65,49 @@
       
       <!-- End content edits here. -->
     </footer>
+    <script>
+      // Keep slideshow container height locked to the first image's displayed height
+      function setSlideshowHeight() {
+        const container = document.querySelector('.slideshow-container');
+        if (!container) return;
+        const firstImg = container.querySelector('img');
+        if (!firstImg) return;
+
+        const computeHeight = () => {
+          const width = container.clientWidth;
+          let ratio = 0;
+          if (firstImg.naturalWidth && firstImg.naturalHeight) {
+            ratio = firstImg.naturalHeight / firstImg.naturalWidth;
+          } else {
+            const r = firstImg.getBoundingClientRect();
+            ratio = r.height / r.width || 0.6;
+          }
+          const h = Math.round(width * ratio);
+          container.style.height = h + 'px';
+        };
+
+        if (firstImg.complete) computeHeight();
+        else firstImg.addEventListener('load', computeHeight);
+        window.addEventListener('resize', computeHeight);
+      }
+
+      setSlideshowHeight();
+
+      let slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        slides[slideIndex-1].style.display = "block";  
+        setTimeout(showSlides, 4000); // Change image every 4 seconds
+      }
+    </script>
+
   </body>
 </html>

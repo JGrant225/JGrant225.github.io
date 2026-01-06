@@ -24,7 +24,7 @@ html {
 }
 
 html, body{
-    height: 100%;
+    min-height: 100%;
 }
 body {
     background: #f6f6f6;
@@ -100,6 +100,7 @@ footer a:hover {
     background-size: cover;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 .home .content-wrapper{
     flex: 1 0 auto;
@@ -116,6 +117,37 @@ footer a:hover {
         padding: 20px;
     }
 }
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* Slideshow sizing: keep container fixed to first image's displayed size */
+.slideshow-container{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+.slideshow-container .mySlides{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.slideshow-container .mySlides img{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    display: block;
+}
+
 /* RESUME
 ---------------------------------*/
 .resume header::before{
@@ -196,6 +228,52 @@ footer a:hover {
 }
 /* Skills
 ---------------------------------*/
+/* Skills grid and cards */
+.skills-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+.skill-card{
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 14px 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.skill-card h4{
+    margin: 0 0 6px 0;
+    font-size: 1.6rem;
+}
+.skill-card p{
+    margin: 0;
+    color: #50514f;
+    font-size: 1.3rem;
+}
+.skill-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    background-color: #f6f9fb;
+}
+
+/* Skills subsections */
+.skills-sections{
+    display: block;
+}
+.skills-section{
+    margin-top: 18px;
+}
+.skills-section h3{
+    margin: 0 0 10px 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
 
 /* Work Experience
 ---------------------------------*/
