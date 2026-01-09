@@ -161,6 +161,18 @@ footer a:hover {
     to {opacity: 1}
 }
 
+/* Scroll reveal: start hidden and slide up slightly, then show when `.visible` is added */
+.reveal{
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 420ms cubic-bezier(.2,.9,.2,1), transform 420ms cubic-bezier(.2,.9,.2,1);
+    will-change: opacity, transform;
+}
+.reveal.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Slideshow sizing: keep container fixed to first image's displayed size */
 .slideshow-container{
     position: relative;
@@ -301,6 +313,40 @@ footer a:hover {
 @media screen and (max-width: 650px){
     .project-link img{ width:100%; }
     .project-overlay{ padding:10px; }
+
+    /* Mobile: stack overlay below the image and keep it visible */
+    .project-link{ display:block; position:static; overflow:visible; }
+    .project-link img{ border-radius:6px 6px 0 0; margin:0; display:block; }
+    .project-overlay{
+        position: relative;
+        inset: auto;
+        display: block;
+        opacity: 1 !important;
+        transition: none;
+        pointer-events: auto;
+        background: rgba(0,0,0,0.6);
+        color: #fff;
+        padding: 12px 12px 18px 12px; 
+        border-radius: 0 0 6px 6px;
+        text-align: left;
+        margin-bottom: 18px;
+    }
+}
+
+/* Education & Work Experience
+---------------------------------*/
+.education-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.education-row .stevens-logo{
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 /* Skills

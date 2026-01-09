@@ -79,6 +79,28 @@
       
       </section>
 
+      <!-- //  EDUCATION & CERTIFICATIONS  // -->
+      <section class="resume-section">
+        <!-- Start content edits below this line.  -->
+        <h2>Education</h2>
+
+        <!-- To add more items, copy this whole <section></section> block -->
+        <section class="education-info">
+          <div class="education-row">
+            <img class="stevens-logo" src="images/logos/Stevens.png" alt="Stevens Institute of Technology logo">
+            <div class="education-details">
+              <h3>Stevens Institute of Technology - Hoboken, NJ</h3>
+              <p>Software Engineering (BE), GPA 3.82, Expected Graduation 2026</p>
+              <p>Stevens Pinnacle Scholar, Deans List Recognition, National Honor Society</p>
+              <p>Related Coursework: Data Mining and Applied Machine Learning, Data Structures, Discrete
+                 Mathematics, Object Oriented Software Engineering, Logistics and Supply Chain Management </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- End content edits here. -->
+      </section>
+
       <!-- //  WORK EXPERIENCE  // -->
       <section class="resume-section">
         <!-- Start content edits below this line.  -->
@@ -190,10 +212,10 @@
             <div class="skills-grid">
               <div class="skill-card skill-jupyter has-logo"><div class="skill-info"><h4>Jupyter Notebook</h4><p>Data & Analysis</p></div><img class="skill-logo" src="images/logos/Jupyter.svg" alt="Jupyter logo"></div>
               <div class="skill-card skill-matlab has-logo"><div class="skill-info"><h4>MATLAB</h4><p>Analysis</p></div><img class="skill-logo" src="images/logos/Matlab.png" alt="MATLAB logo"></div>
-              <div class="skill-card skill-simulink has-logo"><div class="skill-info"><h4>Simulink</h4><p>Modeling</p></div><img class="skill-logo" src="images/logos/simulink.png" alt="Simulink logo"></div>
+              <div class="skill-card skill-simulink has-logo"><div class="skill-info"><h4>Simulink</h4><p>Modeling</p></div><img class="skill-logo" src="images/logos/Simulink.png" alt="Simulink logo"></div>
               <div class="skill-card skill-linux has-logo"><div class="skill-info"><h4>Linux</h4><p>OS / Dev</p></div><img class="skill-logo" src="images/logos/linux.png" alt="Linux logo"></div>
               <div class="skill-card skill-docker has-logo"><div class="skill-info"><h4>Docker</h4><p>Containers</p></div><img class="skill-logo" src="images/logos/docker.png" alt="Docker logo"></div>
-              <div class="skill-card skill-adobe has-logo"><div class="skill-info"><h4>Adobe Suite</h4><p>Design</p></div><img class="skill-logo" src="images/logos/adobe.svg" alt="Adobe logo"></div>
+              <div class="skill-card skill-adobe has-logo"><div class="skill-info"><h4>Adobe Suite</h4><p>Design</p></div><img class="skill-logo" src="images/logos/Adobe.svg" alt="Adobe logo"></div>
               <div class="skill-card skill-solidworks has-logo"><div class="skill-info"><h4>SolidWorks</h4><p>CAD</p></div><img class="skill-logo" src="images/logos/solidworks.png" alt="SolidWorks logo"></div>
             </div>
           </div>
@@ -208,21 +230,6 @@
           </div>
         </div>
 
-      </section>
-
-      <!-- //  EDUCATION & CERTIFICATIONS  // -->
-      <section class="resume-section">
-        <!-- Start content edits below this line.  -->
-        <h2>Education</h2>
-
-        <!-- To add more items, copy this whole <section></section> block -->
-        <section class="education-info">
-          <h3>Stevens Institute of Technology - Hoboken, NJ</h3>
-          <p>Software Engineering (BE), Expected Graduation 2026</p>
-          <p>Stevens Pinnacle Scholar, Deans List Recognition, National Honor Society</p>
-        </section>
-
-        <!-- End content edits here. -->
       </section>
     </main>
 
@@ -247,4 +254,25 @@
       <!-- End content edits here. -->
     </footer>
   </body>
+  <script>
+    // Scroll-reveal: add .reveal then observe and add .visible when element enters viewport
+    document.addEventListener('DOMContentLoaded', function () {
+      const selector = '.resume-section, .project-item, .work-item, .education-info, .skills-section';
+      const targets = Array.from(document.querySelectorAll(selector));
+      if (!targets.length) return;
+
+      targets.forEach(el => el.classList.add('reveal'));
+
+      const obs = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {threshold: 0.12});
+
+      targets.forEach(el => obs.observe(el));
+    });
+  </script>
 </html>
