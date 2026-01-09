@@ -92,6 +92,39 @@ footer a:hover {
     max-width: 900px;
 }
 
+/* Header with headshot (name/title + photo) */
+.header-row{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.header-row .headshot{
+    width: 96px;
+    height: 96px;
+    border-radius: 6px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.header-text{ min-width: 0; flex: 1; text-align: left; }
+.header-row h1{ margin: 1rem 0; font-size: 5.2rem; line-height: 1.05; }
+.header-row h2{ margin: 1rem 0; font-size: 2.4rem; color: #50514f; font-weight: 400; }
+
+@media screen and (max-width: 650px){
+    .header-row{ gap: 12px; }
+    .header-row .headshot{ width: 56px; height: 56px; }
+    .header-row h1{ font-size: 3.6rem; }
+    .header-row h2{ font-size: 1.8rem; }
+}
+
+@media screen and (max-width: 400px){
+    .header-row{ gap: 8px; }
+    .header-row .headshot{ width: 48px; height: 48px; }
+    .header-row h1{ font-size: 3.0rem; }
+    .header-row h2{ font-size: 1.5rem; }
+}
+
 
 /* HOME
 ---------------------------------*/
@@ -202,13 +235,28 @@ footer a:hover {
     width: 300px;
 }
 @media screen and (min-width:860px) {
+    /* Side-by-side layout on wide screens: image left, content right */
     .project-item{
-        display: flow-root;
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
     }
-    .project-item img{
-        float: left;
-        margin-right: 20px;
+    .project-link{
+        flex: 0 0 320px;
+        max-width: 320px;
     }
+    .project-link img{
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 6px;
+    }
+    .project-content{
+        flex: 1 1 auto;
+    }
+    /* Ensure overlay sits exactly over the image */
+    .project-link{ position: relative; }
+    .project-overlay{ inset: 0; }
 }
 @media screen and (min-width:650px) and (max-width: 859px) {
     .project-wrapper{
@@ -226,6 +274,35 @@ footer a:hover {
         margin-bottom: 10px;
     }
 }
+/* Project clickable image + overlay */
+.project-link{ display:inline-block; position:relative; overflow:hidden; }
+.project-link img{ display:block; width:100%; height:auto; border-radius:6px; }
+.project-overlay{
+    position:absolute;
+    inset:0; 
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    background:rgba(0,0,0,0.55);
+    opacity:0;
+    transition:opacity 180ms ease;
+    padding:12px;
+    border-radius:6px;
+    box-sizing:border-box;
+    pointer-events:none;
+}
+.project-link:focus .project-overlay,
+.project-link:hover .project-overlay{ opacity:1; pointer-events:auto; }
+@media (hover: none){
+    .project-overlay{ opacity:1; pointer-events:auto; }
+}
+@media screen and (max-width: 650px){
+    .project-link img{ width:100%; }
+    .project-overlay{ padding:10px; }
+}
+
 /* Skills
 ---------------------------------*/
 /* Skills grid and cards */
@@ -260,6 +337,41 @@ footer a:hover {
     box-shadow: 0 10px 24px rgba(0,0,0,0.12);
     background-color: #f6f9fb;
 }
+
+/* Variant when a logo is present */
+.skill-card.has-logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+.skill-logo{
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    padding-left: 7px;
+    flex-shrink: 0;
+}
+.skill-info{ min-width: 0; }
+
+
+/* Color accents for skills */
+.skill-card.skill-java{ background-color: #f7efe5; border-left: 4px solid #b0721e; }
+.skill-card.skill-python{ background-color:#e8f4fb; border-left:4px solid #3572A5; }
+.skill-card.skill-htmlcss{ background-color:#fff3e6; border-left:4px solid #e34f26; }
+.skill-card.skill-js{ background-color:#fffaf0; border-left:4px solid #f7df1e; }
+.skill-card.skill-cpp{ background-color:#eef6ff; border-left:4px solid #004482; }
+.skill-card.skill-sql{ background-color:#f0f7ea; border-left:4px solid #31748f; }
+.skill-card.skill-jupyter{ background-color:#f6f8fb; border-left:4px solid #F37626; }
+.skill-card.skill-matlab{ background-color:#f5f6fb; border-left:4px solid #0076a8; }
+.skill-card.skill-simulink{ background-color:#f3f6f4; border-left:4px solid #3aa0a0; }
+.skill-card.skill-linux{ background-color:#f3f7f5; border-left:4px solid #000000; }
+.skill-card.skill-docker{ background-color:#eef7fb; border-left:4px solid #2496ed; }
+.skill-card.skill-adobe{ background-color:#fff7f3; border-left:4px solid #ff0000; }
+.skill-card.skill-solidworks{ background-color:#f6f8fb; border-left:4px solid #0066cc; }
+.skill-card.skill-circuit{ background-color:#fffaf0; border-left:4px solid #b38b00; }
+.skill-card.skill-oscilloscope{ background-color:#f6f7fb; border-left:4px solid #666666; }
+.skill-card.skill-amplifier{ background-color:#fbf7f6; border-left:4px solid #a83a2a; }
 
 /* Skills subsections */
 .skills-sections{

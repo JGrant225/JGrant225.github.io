@@ -15,10 +15,14 @@
     <header>
       <!-- Start content edits below this line. -->
        <div class="content-wrapper">
-        <h1>James Grant</h1>
-        <h2>Software Engineer</h2>
-        <br>
-        <a href="index.html">Back to homepage</a>
+        <div class="header-row">
+          <img class="headshot" src="images/Profile_Picture.jpg" alt="James Grant headshot">
+          <div class="header-text">
+            <h1>James Grant</h1>
+            <h2>Software Engineer</h2>
+            <a href="index.html">Back to homepage</a>
+          </div>
+        </div>
       </div>
 
       <!-- End content edits here. -->
@@ -35,28 +39,41 @@
       <section class="resume-section">
         <!-- Start content edits below this line. -->
         <h2>Projects</h2>
-        <p>Here is a display of my past programming projects:</p>
+        <p>Here is a display of my past programming projects. To view more, click the image attached to each project.</p>
 
         <!-- To add more items, copy this whole <section></section> block-->
         <div class="project-wrapper">
         <section class="project-item">
-          <img src="images/project-word-game.jpg" srcset="images/project-word-game.jpg 2x" alt="Starting screen of a redisgned wordle clone and number guessing game" width="" height="">
-          <h3>Wordle/Number guessing game clone</h3>
-          <p>For my Individual Software Engineering class, my group collaborated to create a Wordle clone as well as a number guessing game to display our knowledge of HTML user interaction.</p>
-          <!-- link to project -->
-          <a class="btn" href="WordNumberGame/SSW215FinalProjectUI.htm" target="_blank">Link</a>
-          <!-- additional links, e.g. newsletter -->
-          <!-- <a class="btn" href="#" target="_blank">Another link</a> -->
+          <a class="project-link" href="https://www.youtube.com/watch?v=bejXCXX3M8s" target="_blank">
+            <img src="images/Jenkins working perforce.jpg" srcset="images/Jenkins working perforce.jpg 2x" alt="Screenshot of Jenkins working with Perforce">
+            <div class="project-overlay"><div><strong>Skills used:</strong><div>Jenkins, Perforce, DigitalOcean</div></div></div>
+          </a>
+          <div class="project-content">
+            <h3>Automated CI/CD Pipeline</h3>
+            <p>For my DevOps Principles and Practices class, I was able to construct a CI/CD pipeline to automate the compilation of a LaTeX document. While I could not keep the pipeline published online due to financial constraints, I documented the process thoroughly in a short video linked here!</p>
+          </div>
+        </section>
+
+        <section class="project-item">
+          <a class="project-link" href="WordNumberGame/SSW215FinalProjectUI.htm" target="_blank">
+            <img src="images/project-word-game.jpg" srcset="images/project-word-game.jpg 2x" alt="Starting screen of a redisgned wordle clone and number guessing game">
+            <div class="project-overlay"><div><strong>Skills used:</strong><div>HTML, CSS, JavaScript</div></div></div>
+          </a>
+          <div class="project-content">
+            <h3>Wordle/Number guessing game clone</h3>
+            <p>For my Individual Software Engineering class, my group collaborated to create a Wordle clone as well as a number guessing game to display our knowledge of HTML user interaction.</p>
+          </div>
         </section>
         
         <section class="project-item">
-          <img src="images/project-ChatGPT-site.jpg" srcset="images/project-ChatGPT-site.jpg 2x" alt="Research Poster of 2024 Summer Project" width="" height="200px">
-          <h3>Software Refactoring Research Project</h3>
-          <p>In the summer of 2024, I worked with Professor Eman Abdullah AlOmar on a project studying the habits of software engineers when refactoring their code using ChatGPT. Over the summer, our team completed a research paper and published a website detailing our methodology and results in depth. More information about my role in the project can be found below.</p>
-          <!-- link to project -->
-          <a class="btn" href="https://sites.google.com/stevens.edu/refactoringprogramspinnacle24/home?authuser=1" target="_blank">Link</a>
-          <!-- additional links, e.g. newsletter -->
-          <!-- <a class="btn" href="#" target="_blank">Another link</a> -->
+          <a class="project-link" href="https://sites.google.com/stevens.edu/refactoringprogramspinnacle24/home?authuser=1" target="_blank">
+            <img src="images/project-ChatGPT-site.jpg" srcset="images/project-ChatGPT-site.jpg 2x" alt="Research Poster of 2024 Summer Project">
+            <div class="project-overlay"><div><strong>Skills used:</strong><div>Python, Data Analysis, Research</div></div></div>
+          </a>
+          <div class="project-content">
+            <h3>Software Refactoring Research Project</h3>
+            <p>In the summer of 2024, I worked with Professor Eman Abdullah AlOmar on a project studying the habits of software engineers when refactoring their code using ChatGPT. Over the summer, our team completed a research paper and published a website detailing our methodology and results in depth. More information about my role in the project can be found below.</p>
+          </div>
         </section>
         </div>
       
@@ -138,34 +155,55 @@
           <div class="skills-section">
             <h3>Programming Languages &amp; Software</h3>
             <div class="skills-grid">
-              <div class="skill-card"><h4>Java</h4><p>Programming</p></div>
-              <div class="skill-card"><h4>Python</h4><p>Programming</p></div>
-              <div class="skill-card"><h4>HTML/CSS</h4><p>Frontend</p></div>
-              <div class="skill-card"><h4>JavaScript (React.js, Node.js)</h4><p>Frontend / Backend</p></div>
-              <div class="skill-card"><h4>C / C++</h4><p>Systems</p></div>
-              <div class="skill-card"><h4>SQL (MySQL, PostgreSQL)</h4><p>Databases</p></div>
+              <div class="skill-card skill-java has-logo">
+                <div class="skill-info">
+                  <h4>Java</h4>
+                  <p>Programming</p>
+                </div>
+                <img class="skill-logo" src="images/logos/java (1).png" alt="Java logo">
+              </div>
+              <div class="skill-card skill-python has-logo">
+                <div class="skill-info"><h4>Python</h4><p>Programming</p></div>
+                <img class="skill-logo" src="images/logos/python.png" alt="Python logo">
+              </div>
+              <div class="skill-card skill-htmlcss has-logo">
+                <div class="skill-info"><h4>HTML/CSS</h4><p>Frontend</p></div>
+                <img class="skill-logo" src="images/logos/html.png" alt="HTML/CSS logo">
+              </div>
+              <div class="skill-card skill-js has-logo"> 
+                <div class="skill-info"><h4>JavaScript (React.js, Node.js)</h4><p>Frontend / Backend</p></div>
+                <img class="skill-logo" src="images/logos/js.png" alt="JavaScript logo">
+              </div>
+              <div class="skill-card skill-cpp has-logo">
+                <div class="skill-info"><h4>C / C++</h4><p>Systems</p></div>
+                <img class="skill-logo" src="images/logos/c-.png" alt="C/C++ logo">
+              </div>
+              <div class="skill-card skill-sql has-logo">
+                <div class="skill-info"><h4>SQL (MySQL, PostgreSQL)</h4><p>Databases</p></div>
+                <img class="skill-logo" src="images/logos/database.png" alt="SQL logo">
+              </div>
             </div>
           </div>
 
           <div class="skills-section">
             <h3>Tools &amp; Frameworks</h3>
             <div class="skills-grid">
-              <div class="skill-card"><h4>Jupyter Notebook</h4><p>Data & Analysis</p></div>
-              <div class="skill-card"><h4>MATLAB</h4><p>Analysis</p></div>
-              <div class="skill-card"><h4>Simulink</h4><p>Modeling</p></div>
-              <div class="skill-card"><h4>Linux</h4><p>OS / Dev</p></div>
-              <div class="skill-card"><h4>Docker</h4><p>Containers</p></div>
-              <div class="skill-card"><h4>Adobe Suite</h4><p>Design</p></div>
-              <div class="skill-card"><h4>SolidWorks</h4><p>CAD</p></div>
+              <div class="skill-card skill-jupyter has-logo"><div class="skill-info"><h4>Jupyter Notebook</h4><p>Data & Analysis</p></div><img class="skill-logo" src="images/logos/Jupyter.svg" alt="Jupyter logo"></div>
+              <div class="skill-card skill-matlab has-logo"><div class="skill-info"><h4>MATLAB</h4><p>Analysis</p></div><img class="skill-logo" src="images/logos/Matlab.png" alt="MATLAB logo"></div>
+              <div class="skill-card skill-simulink has-logo"><div class="skill-info"><h4>Simulink</h4><p>Modeling</p></div><img class="skill-logo" src="images/logos/simulink.png" alt="Simulink logo"></div>
+              <div class="skill-card skill-linux has-logo"><div class="skill-info"><h4>Linux</h4><p>OS / Dev</p></div><img class="skill-logo" src="images/logos/linux.png" alt="Linux logo"></div>
+              <div class="skill-card skill-docker has-logo"><div class="skill-info"><h4>Docker</h4><p>Containers</p></div><img class="skill-logo" src="images/logos/docker.png" alt="Docker logo"></div>
+              <div class="skill-card skill-adobe has-logo"><div class="skill-info"><h4>Adobe Suite</h4><p>Design</p></div><img class="skill-logo" src="images/logos/adobe.svg" alt="Adobe logo"></div>
+              <div class="skill-card skill-solidworks has-logo"><div class="skill-info"><h4>SolidWorks</h4><p>CAD</p></div><img class="skill-logo" src="images/logos/solidworks.png" alt="SolidWorks logo"></div>
             </div>
           </div>
 
           <div class="skills-section">
             <h3>Hardware &amp; Testing</h3>
             <div class="skills-grid">
-              <div class="skill-card"><h4>Circuit assembly</h4><p>Hardware</p></div>
-              <div class="skill-card"><h4>Oscilloscope</h4><p>Testing</p></div>
-              <div class="skill-card"><h4>Amplifier / Filter manufacture</h4><p>Hardware</p></div>
+              <div class="skill-card skill-circuit has-logo"><div class="skill-info"><h4>Circuit assembly</h4><p>Hardware</p></div><img class="skill-logo" src="images/logos/circuit.png" alt="Circuit stock logo"></div>
+              <div class="skill-card skill-oscilloscope has-logo"><div class="skill-info"><h4>Oscilloscope</h4><p>Testing</p></div><img class="skill-logo" src="images/logos/oscilloscope.png" alt="Oscilloscope stock logo"></div>
+              <div class="skill-card skill-amplifier has-logo"><div class="skill-info"><h4>Amplifier / Filter manufacture</h4><p>Hardware</p></div><img class="skill-logo" src="images/logos/amplifier.png" alt="Amplifier stock logo"></div>
             </div>
           </div>
         </div>
